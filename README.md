@@ -11,17 +11,17 @@
 
 ## 界面预览
 
-| 首页 | 创作工具 | 社区画廊 |
+| 首页 | 创作工具 | 首页画廊 |
 |:----:|:--------:|:--------:|
-| ![首页](screenshots/1.png) | ![创作](screenshots/3.png) | ![画廊](screenshots/2.png) |
+| ![首页](screenshots/1.png) | ![创作工具](screenshots/3.png) | ![画廊](screenshots/2.png) |
 
-| 作品详情 | 用户主页 | 移动端适配 |
+| 用户主页 | 更多内容 | 聊天私信 |
 |:--------:|:--------:|:----------:|
-| ![详情](screenshots/4.png) | ![主页](screenshots/5.png) | ![移动端](screenshots/8.png) |
+| ![用户主页](screenshots/.png) | ![更多内容](screenshots/5.png) | ![聊天私信](screenshots/8.png) |
 
-| 登录注册 | 账户设置 |
+| 管理员端 | 创作中心 |
 |:--------:|:--------:|
-| ![登录](screenshots/7.png) | ![设置](screenshots/6.png) |
+| ![管理员端](screenshots/7.png) | ![创作中心](screenshots/6.png) |
 
 ---
 
