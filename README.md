@@ -17,7 +17,7 @@
 
 | 用户主页 | 更多内容 | 聊天私信 |
 |:--------:|:--------:|:----------:|
-| ![用户主页](screenshots/.png) | ![更多内容](screenshots/5.png) | ![聊天私信](screenshots/8.png) |
+| ![用户主页](screenshots/4.png) | ![更多内容](screenshots/5.png) | ![聊天私信](screenshots/8.png) |
 
 | 管理员端 | 创作中心 |
 |:--------:|:--------:|
