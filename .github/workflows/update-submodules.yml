@@ -19,7 +19,9 @@ jobs:
           submodules: true
 
       - name: Update all submodules to latest
-        run: git submodule update --remote --merge
+        run: |
+          git submodule update --init --remote --force
+          git submodule foreach 'git checkout $(git remote show origin | sed -n "s/.*HEAD branch: //p") || true'
 
       - name: Check for changes
         id: check
