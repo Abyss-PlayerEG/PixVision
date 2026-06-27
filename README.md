@@ -19,9 +19,9 @@
 |:--------:|:--------:|:----------:|
 | ![用户主页](screenshots/4.png) | ![更多内容](screenshots/5.png) | ![聊天私信](screenshots/8.png) |
 
-| 管理员端 | 创作中心 |
-|:--------:|:--------:|
-| ![管理员端](screenshots/7.png) | ![创作中心](screenshots/6.png) |
+| 管理员端 | 创作中心 | 认证页 |
+|:--------:|:--------:|:--------:|
+| ![管理员端](screenshots/7.png) | ![创作中心](screenshots/6.png) | ![认证](screenshots/9.png) |
 
 ---
 
