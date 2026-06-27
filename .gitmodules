@@ -1,0 +1,9 @@
+[submodule "PixVisionPyServer"]
+	path = PixVisionPyServer
+	url = https://github.com/Abyss-PlayerEG/PixVisionPyServer.git
+[submodule "PixVisionServer"]
+	path = PixVisionServer
+	url = https://github.com/Abyss-PlayerEG/PixVisionServer.git
+[submodule "PixVisionPage"]
+	path = PixVisionPage
+	url = https://github.com/Abyss-PlayerEG/PixVisionPage.git
