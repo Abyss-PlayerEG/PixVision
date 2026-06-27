@@ -59,6 +59,79 @@ git clone --recurse-submodules https://github.com/Abyss-PlayerEG/PixVision.git
 git submodule update --init --recursive
 ```
 
+### 配置说明
+
+所有配置文件存放在 `~/.pix_vision/`（Linux/Mac）或 `%USERPROFILE%\.pix_vision\`（Windows）。
+
+```
+~/.pix_vision/
+├── application.yml          # Spring Boot 主配置
+├── python-server-conf.json  # FastAPI AI 服务配置
+├── config/                  # 其他配置
+├── data/                    # 数据存储
+├── key/                     # 密钥文件
+└── log/                     # 日志目录
+```
+
+#### Spring Boot 后端配置（`application.yml`）
+
+```yaml
+server:
+  port: 1899
+
+cors:
+  allowed-origin: "*"  # 开发环境用 *，生产环境填具体域名
+
+spring:
+  datasource:
+    url: jdbc:mysql://<主机地址>:3306/db_pix_vision?allowPublicKeyRetrieval=true&useSSL=false
+    username: <数据库用户>
+    password: <数据库密码>
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 5000
+      database: 0
+  mail:
+    host: smtp-relay.brevo.com
+    port: 587
+    from: bot@bot.playereg.top
+    username: <SMTP用户名>
+    password: <SMTP授权码>
+
+mu-ying-secure:
+  jwt-secret: <使用openssl生成>
+  salt: <自定义盐值>
+```
+
+#### FastAPI AI 服务配置（`python-server-conf.json`）
+
+```json
+{
+  "ai": {
+    "api_key": "sk-xxx",
+    "model": "deepseek-v4-flash",
+    "base_url": "https://api.deepseek.com",
+    "timeout": 3
+  },
+  "bilibili": {
+    "SESSDATA": "可选"
+  }
+}
+```
+
+| 字段 | 说明 |
+|------|------|
+| `ai.api_key` | DeepSeek/OpenAI API Key |
+| `ai.model` | 模型名称 |
+| `ai.base_url` | API 地址 |
+| `bilibili.SESSDATA` | B站登录凭证（可选） |
+
+#### 前端配置
+
+子模块初始化后查看 `PixVisionPage/config/` 目录。
+
 ### 开发模式
 
 ```bash

@@ -59,6 +59,79 @@ git clone --recurse-submodules https://github.com/Abyss-PlayerEG/PixVision.git
 git submodule update --init --recursive
 ```
 
+### Configuration
+
+All configurations are stored in `~/.pix_vision/` (Linux/Mac) or `%USERPROFILE%\.pix_vision\` (Windows).
+
+```
+~/.pix_vision/
+├── application.yml          # Spring Boot config
+├── python-server-conf.json  # FastAPI AI service config
+├── config/                  # Other configs
+├── data/                    # Data storage
+├── key/                     # Key files
+└── log/                     # Log files
+```
+
+#### Spring Boot Backend (`application.yml`)
+
+```yaml
+server:
+  port: 1899
+
+cors:
+  allowed-origin: "*"  # Use * for dev, specific domain for production
+
+spring:
+  datasource:
+    url: jdbc:mysql://<host>:3306/db_pix_vision?allowPublicKeyRetrieval=true&useSSL=false
+    username: <username>
+    password: <password>
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 5000
+      database: 0
+  mail:
+    host: smtp-relay.brevo.com
+    port: 587
+    from: bot@bot.playereg.top
+    username: <smtp-username>
+    password: <smtp-password>
+
+mu-ying-secure:
+  jwt-secret: <generate-with-openssl>
+  salt: <custom-salt>
+```
+
+#### FastAPI AI Service (`python-server-conf.json`)
+
+```json
+{
+  "ai": {
+    "api_key": "sk-xxx",
+    "model": "deepseek-v4-flash",
+    "base_url": "https://api.deepseek.com",
+    "timeout": 3
+  },
+  "bilibili": {
+    "SESSDATA": "optional"
+  }
+}
+```
+
+| Field | Description |
+|-------|-------------|
+| `ai.api_key` | DeepSeek/OpenAI API Key |
+| `ai.model` | Model name |
+| `ai.base_url` | API endpoint URL |
+| `bilibili.SESSDATA` | Bilibili login token (optional) |
+
+#### Frontend Config
+
+See `PixVisionPage/config/` directory after submodule init.
+
 ### Development Mode
 
 ```bash
